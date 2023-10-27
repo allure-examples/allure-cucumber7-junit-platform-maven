@@ -21,12 +21,15 @@ jobs:
           cache: 'maven'
           distribution: 'zulu'
 
+      - name: Give Maven Wrapper permissions to be executable
+        run: chmod +x ./mvnw
+
       - name: Install dependencies
-        run: mvn dependency:go-offline compile compiler:testCompile
+        run: ./mvnw dependency:go-offline compile compiler:testCompile
 
       - name: Run Test
         if: always()
-        run: mvn test
+        run: ./mvnw test
         continue-on-error: true
 
       - name: Get Allure history
