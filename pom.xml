@@ -48,7 +48,7 @@
     <dependencies>
         <dependency>
             <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-junit5</artifactId>
+            <artifactId>allure-junit-platform</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
